@@ -1,8 +1,0 @@
-C:\Users\DIMA\Desktop\Навчання\Навчання\bin\Debug\Навчання.exe.config
-C:\Users\DIMA\Desktop\Навчання\Навчання\bin\Debug\Навчання.exe
-C:\Users\DIMA\Desktop\Навчання\Навчання\bin\Debug\Навчання.pdb
-C:\Users\DIMA\Desktop\Навчання\Навчання\obj\Debug\Навчання.csproj.AssemblyReference.cache
-C:\Users\DIMA\Desktop\Навчання\Навчання\obj\Debug\Навчання.csproj.SuggestedBindingRedirects.cache
-C:\Users\DIMA\Desktop\Навчання\Навчання\obj\Debug\Навчання.csproj.CoreCompileInputs.cache
-C:\Users\DIMA\Desktop\Навчання\Навчання\obj\Debug\Навчання.exe
-C:\Users\DIMA\Desktop\Навчання\Навчання\obj\Debug\Навчання.pdb
