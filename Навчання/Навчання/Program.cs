@@ -7,31 +7,93 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
 using System.Threading;
+using System.Security.Cryptography;
 
 namespace Навчання
 {
     internal class Program
     {
-        public const double PI = 3.1415926535897931;
-        static void Main(string[] args)
+        struct Dog
         {
-            ///Homework 1.1
-            Console.Write("Type a lenth of the side: ");
-            int a = int.Parse(Console.ReadLine());
-            Console.WriteLine("The perimeter is: "+ a*4);
-            Console.WriteLine("The area is: " + (a*a));
-            ///Homework 1.2
-            Console.WriteLine("What is your name?");
-            string name = Console.ReadLine();
-            Console.WriteLine($"How old are you, {name}");
-            int age=int.Parse(Console.ReadLine());
-            Console.WriteLine($"Your name is {name} and you are {age} years old");
-            ///Homework 1.3          
-            Console.Write("Type the radius of the circle:");
-            double r=double.Parse(Console.ReadLine());
-            Console.WriteLine("The lenth(l) is: "+PI*2*r+" the area is: "+PI*r*r+" and the volum is: "+4/3*PI*r*r*r);
+            public string name;
+            public string mark;
+            public int age;
 
+            public override string ToString()
+            {
+                return $"Name: {name}\nMark: {mark}\nAge: {age}";
+            }
+        }
+        enum HTTPError
+        {
+            BadRequest = 400,
+            Unauthorized = 401,
+            PaymentRequired = 402,
+            Forbidden = 403,
+            NotFound = 404,
+            InternalServerError = 500,
+            NotImplemented = 501,
+            BadGateway = 502,
+            ServiceUnavailable = 503,
+            GatewayTimeout = 504
         }
 
+        static void Main(string[] args)
+        {
+
+            ///Homework 2.1
+            Console.WriteLine("Type 3 numbers");
+            float a = float.Parse(Console.ReadLine());
+            float b = float.Parse(Console.ReadLine());
+            float c = float.Parse(Console.ReadLine());
+            if (a <= 5 && a >= -5 && b <= 5 && b >= -5 && c <= 5 && c >= -5)
+            {
+                Console.WriteLine("In range");
+            }
+            else 
+            {
+                Console.WriteLine("Not in range");
+            }
+            ///Homework 2.2
+            List<int> list = new List<int>();
+            int a1=int.Parse(Console.ReadLine());
+            int b1=int.Parse(Console.ReadLine());
+            int c1=int.Parse(Console.ReadLine());
+            list.Add(a1);
+            list.Add(b1);
+            list.Add(c1);
+            Console.WriteLine(list.Max());
+            Console.WriteLine(list.Min());
+            ///Homework 2.3
+            {
+                Console.Write("Enter HTTP error code: ");
+                int errorCode = int.Parse(Console.ReadLine());
+
+                if (Enum.IsDefined(typeof(HTTPError), errorCode))
+                {
+                    HTTPError httpError = (HTTPError)errorCode;
+                    Console.WriteLine($"The error is {httpError}");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid HTTP error code.");
+                }
+            }
+            ///Homework 2.4
+            Dog myDog = new Dog();
+
+            Console.Write("Enter dog's name: ");
+            myDog.name = Console.ReadLine();
+
+            Console.Write("Enter dog's mark: ");
+            myDog.mark = Console.ReadLine();
+
+            Console.Write("Enter dog's age: ");
+            myDog.age = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\nDog's information:");
+            Console.WriteLine(myDog);
+
+        }
     }
 }
